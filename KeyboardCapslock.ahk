@@ -152,6 +152,7 @@ Capslock & ' up::SendInput {Blind}{PgDn Up}
 Capslock & .::SendInput {Blind}{Insert Down}
 Capslock & /::SendInput {Blind}{Del Down}
 Capslock & Space::SendInput {Blind}{BS Down}
+Capslock & BS::SendInput {Blind}{Del Down}
 
 
 ; Capslock + TAB/q (prev/next tab)

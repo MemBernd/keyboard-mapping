@@ -157,7 +157,7 @@ Tab & ' up::SendInput {Blind}{PgDn Up}
 Tab & .::SendInput {Blind}{Insert Down}
 Tab & /::SendInput {Blind}{Del Down}
 Tab & Space::SendInput {Blind}{BS Down}
-
+Tab & BS::SendInput {Blind}{Del Down}
 
 ; Tab + TAB/q (prev/next tab)
 
