@@ -46,10 +46,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #Persistent
 SetCapslockState, AlwaysOff
 
-Alt & Capslock::SendInput {Alt Down}{Tab}
-Capslock::SendInput {Blind}{Tab DownTemp}
-Capslock up::SendInput {Blind}{Tab Up}
-Shift & Capslock::SendInput {Shift Down}{Tab}
+*Capslock::SendInput {Blind}{Tab}
+;Alt & Capslock::SendInput {Alt Down}{Tab}
+;Capslock::SendInput {Blind}{Tab DownTemp}
+;Capslock up::SendInput {Blind}{Tab Up}
+;Shift & Capslock::SendInput {Shift Down}{Tab}
 
 ;volume and stuff
 Tab & x::SendInput {Blind}{Volume_Mute}
