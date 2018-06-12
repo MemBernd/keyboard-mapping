@@ -45,34 +45,34 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #Persistent
 SetCapsLockState, AlwaysOff
+SetKeyDelay -1
+
 
 ;volume and stuff
-;Capslock & x::SendInput {Blind}{Volume_Mute}
-;Capslock & c::SendInput {Blind}{Volume_Down}
-;Capslock & v::SendInput {Blind}{Volume_Up}
+Capslock & x::SendInput {Blind}{Volume_Mute}
+Capslock & c::SendInput {Blind}{Volume_Down}
+Capslock & v::SendInput {Blind}{Volume_Up}
 ;Capslock & f::WinMaximize, A
 ;Capslock & s::SendInput {Blind}{WinMinimize}
 
 ;change apps key to control for surface
 ;Appskey::SendInput {Blind}{RControl Down} <- This doesn't work, appskey gets stuck
 Appskey::
-    SetKeyDelay -1
     Send {RCtrl Down}
 return
 Appskey up::
-    SetKeyDelay -1
     Send {RCtrl Up}
 return
 
 ;own additions
 Capslock & \::SendInput {Blind}{PrintScreen DownTemp}
 Capslock & \ up::SendInput {Blind}{PrintScreen Up}
-Capslock & Enter::SendInput {Blind}{Esc Down}
+Capslock & Enter::SendInput {Blind}{Esc DownTemp}
 Capslock & Enter up::SendInput {Blind}{Esc Up}
 
 ;command to change desktop in windows
-Capslock & r::SendInput {LWin Down}{Ctrl Down}{Left}{Ctrl Up}{LWin Up}
-Capslock & t::SendInput {LWin Down}{Ctrl Down}{Right}{Ctrl Up}{LWin Up}
+Capslock & r::SendInput {LWin Down}{Ctrl Down}{Left DownTemp}{Left Up}{Ctrl Up}{LWin Up}
+Capslock & t::SendInput {LWin Down}{Ctrl Down}{Right DownTepm}{Right Up}{Ctrl Up}{LWin Up}
 
 
 ;F-keys
@@ -107,41 +107,43 @@ Capslock & = up::Send {Blind}{F12 Up}
 
 ; Capslock + neui (left, down, up, right)
 
-Capslock & n::Send {Blind}{Left Down}
+Capslock & n::Send {Blind}{Left DownTemp}
 Capslock & n up::Send {Blind}{Left Up}
 
-Capslock & e::Send {Blind}{Down Down}
+Capslock & e::Send {Blind}{Down DownTemp}
 Capslock & e up::Send {Blind}{Down Up}
 
-Capslock & u::Send {Blind}{Up Down}
+Capslock & u::Send {Blind}{Up DownTemp}
 Capslock & u up::Send {Blind}{Up Up}
 
-Capslock & i::Send {Blind}{Right Down}
+Capslock & i::Send {Blind}{Right DownTemp}
 Capslock & i up::Send {Blind}{Right Up}
 
 
 ; Capslock + 'o[] (pgdown, pgup, home, end)
 
-;Capslock & [::SendInput {Blind}{Home Down}
-;Capslock & [ up::SendInput {Blind}{Home Up}
+Capslock & [::SendInput {Blind}{Home DownTemp}
+Capslock & [ up::SendInput {Blind}{Home Up}
 
-;Capslock & ]::SendInput {Blind}{End Down}
-;Capslock & ] up::SendInput {Blind}{End Up}
+Capslock & ]::SendInput {Blind}{End DownTemp}
+Capslock & ] up::SendInput {Blind}{End Up}
 
-;Capslock & o::SendInput {Blind}{PgUp Down}
-;Capslock & o up::SendInput {Blind}{PgUp Up}
+Capslock & o::SendInput {Blind}{PgUp DownTemp}
+Capslock & o up::SendInput {Blind}{PgUp Up}
 
-;Capslock & '::SendInput {Blind}{PgDn Down}
-;Capslock & ' up::SendInput {Blind}{PgDn Up}
+Capslock & '::SendInput {Blind}{PgDn Down}
+Capslock & ' up::SendInput {Blind}{PgDn Up}
 
 
 
 ; Capslock + nm (insert, backspace, del)
 
-;Capslock & .::SendInput {Blind}{Insert Down}
+Capslock & .::SendInput {Blind}{Insert DownTemp}
+Capslock & . up::SendInput {Blind}{Insert Up}
 ;Capslock & /::SendInput {Blind}{Del Down}
-;Capslock & Space::SendInput {Blind}{BS Down}
-Capslock & BS::SendInput {Blind}{Del Down}
+Capslock & Space::SendInput {Blind}{BS DownTemp}
+Capslock & Space up::SendInput {Blind}{BS Up}
+Capslock & BS::SendInput {Blind}{Del DownTemp}
 Capslock & BS up::SendInput {Blind}{Del Up}
 
 
