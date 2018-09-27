@@ -52,6 +52,8 @@ SetKeyDelay -1
 Capslock & x::SendInput {Blind}{Volume_Mute}
 Capslock & c::SendInput {Blind}{Volume_Down}
 Capslock & v::SendInput {Blind}{Volume_Up}
+Capslock & w::SendInput {Blind}{Media_Prev}
+Capslock & p::SendInput {Blind}{Media_Next}
 ;Capslock & f::WinMaximize, A
 ;Capslock & s::SendInput {Blind}{WinMinimize}
 
