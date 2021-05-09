@@ -42,10 +42,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 
-
 #Persistent
 SetCapsLockState, AlwaysOff
 SetKeyDelay -1
+
+; Make Shift + Capslock work like Capslock (in case it's ever needed)
+Capslock & Space::
+If GetKeyState("CapsLock", "T") = 1
+    SetCapsLockState, AlwaysOff
+Else 
+    SetCapsLockState, AlwaysOn
+Return
 
 
 ;volume and stuff
@@ -54,7 +61,7 @@ Capslock & c::SendInput {Blind}{Volume_Down}
 Capslock & v::SendInput {Blind}{Volume_Up}
 Capslock & w::SendInput {Blind}{Media_Prev}
 Capslock & p::SendInput {Blind}{Media_Next}
-;Capslock & f::WinMaximize, A
+Capslock & f::SendInput {Blind}{Media_Play_Pause}
 ;Capslock & s::SendInput {Blind}{WinMinimize}
 
 ;change apps key to control for surface
@@ -142,9 +149,6 @@ Capslock & ' up::SendInput {Blind}{PgDn Up}
 
 Capslock & .::SendInput {Blind}{Insert DownTemp}
 Capslock & . up::SendInput {Blind}{Insert Up}
-;Capslock & /::SendInput {Blind}{Del Down}
-Capslock & Space::SendInput {Blind}{BS DownTemp}
-Capslock & Space up::SendInput {Blind}{BS Up}
 Capslock & BS::SendInput {Blind}{Del DownTemp}
 Capslock & BS up::SendInput {Blind}{Del Up}
 
